@@ -9,7 +9,7 @@ const copyColor = (elem) => {
 };
 
 const showColors = () => {
-  if(!PickedColors.length) return;
+  if (!PickedColors.length) return;
   ColorList.innerHTML = PickedColors.map(
     (color) =>
       `<li class="color">
@@ -52,4 +52,8 @@ const ClearAllColors = () => {
 };
 
 ClearAll.addEventListener("click", ClearAllColors);
-ColorPickerBtn.addEventListener("click", activateEye);
+ColorPickerBtn.addEventListener("click",activateEye);
+ColorPickerBtn.addEventListener(
+  "keydown",
+  (e) => e.key === "s" && activateEye()
+);
